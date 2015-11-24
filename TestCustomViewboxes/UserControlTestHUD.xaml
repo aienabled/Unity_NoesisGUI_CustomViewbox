@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="WpfApplication1.UserControlTestHUD"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:WpfApplication1.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+			 Background="Black"
+			 Foreground="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.3*" />
+            <RowDefinition Height="3.5*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+		
+		<controls:ScreenAutoViewbox Grid.Column="0" Grid.Row="0" ScaleMult="1" Style="{StaticResource DefaultScreenAutoViewboxStyle}">
+            <Border Width="250" Height="40" Margin="10" Background="Red" VerticalAlignment="Top" HorizontalAlignment="Left"><TextBlock>Icons</TextBlock></Border>
+        </controls:ScreenAutoViewbox>
+		
+		<controls:ScreenAutoViewbox Grid.Column="0" Grid.Row="2" ScaleMult="1" Style="{StaticResource DefaultScreenAutoViewboxStyle}">
+            <Border Width="250" Height="100" Margin="10" Background="Blue" VerticalAlignment="Bottom" HorizontalAlignment="Left"><TextBlock>Stats</TextBlock></Border>
+        </controls:ScreenAutoViewbox>
+		
+		<controls:ScreenAutoViewbox Grid.Column="2" Grid.Row="0" ScaleMult="1" Style="{StaticResource DefaultScreenAutoViewboxStyle}">
+            <Border Width="200" Height="200" Margin="10" Background="Green" VerticalAlignment="Top" HorizontalAlignment="Right"><TextBlock>Radar</TextBlock></Border>
+        </controls:ScreenAutoViewbox>
+		
+		<controls:ScreenAutoViewbox Grid.Column="2" Grid.Row="2" ScaleMult="1" Style="{StaticResource DefaultScreenAutoViewboxStyle}">
+            <Border Width="175" Height="250" Margin="10" Background="Orange" VerticalAlignment="Bottom" HorizontalAlignment="Right"><TextBlock>Weapons</TextBlock></Border>
+        </controls:ScreenAutoViewbox>
+		
+		<controls:ScreenAutoViewbox Grid.Column="1" Grid.Row="1" ScaleMult="1" Style="{StaticResource DefaultScreenAutoViewboxStyle}">
+            <Border Width="300" Height="40" Margin="10" Background="Gray" VerticalAlignment="Bottom" HorizontalAlignment="Center"><TextBlock>Some buttons</TextBlock></Border>
+		</controls:ScreenAutoViewbox>
+		
+		<controls:ScreenAutoViewbox Grid.Column="1" Grid.Row="1" ScaleMult="1" Style="{StaticResource DefaultScreenAutoViewboxStyle}">
+			<StackPanel 
+				Orientation="Vertical" 
+				Width="200" 
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"	>
+				<TextBlock>UI scale</TextBlock>
+				<Slider x:Name="Slider"
+					Width="200"
+					Height="22" Padding="0" Minimum="0.6" Maximum="1.4"
+					Value="{Binding SliderScale, Mode=TwoWay}"
+					SmallChange="0.01"
+					LargeChange="0.15"
+					IsMoveToPointEnabled="False"
+				/>
+			</StackPanel>
+		</controls:ScreenAutoViewbox>
+	</Grid>
+</UserControl>
