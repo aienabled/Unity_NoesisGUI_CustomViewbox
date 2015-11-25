@@ -1,5 +1,4 @@
-# Custom viewboxes for WPF
-Custom scaling viewboxes for WPF/NoesisGUI (Unity3D example)
+# Custom scaling viewboxes for WPF/NoesisGUI (Unity3D example)
 
 ## Installation
 Copy the "TestCustomViewboxes" folder to the Unity3D project into Assets folder. Please be sure you have NoesisGUI installed before doing this.
